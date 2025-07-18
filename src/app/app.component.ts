@@ -4,6 +4,7 @@ import { PrimeryButtonComponent } from './_components/primery-button/primery-but
 import { SecundaryButtonComponent } from './_components/secundary-button/secundary-button.component';
 import { ItemCertificadoComponent } from "./_components/item-certificado/item-certificado.component";
 import { BaseUiComponent } from "./_components/base-ui/base-ui.component";
+import { CertificadosComponent } from "./pages/certificados/certificados.component";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import { BaseUiComponent } from "./_components/base-ui/base-ui.component";
     PrimeryButtonComponent,
     SecundaryButtonComponent,
     ItemCertificadoComponent,
-    BaseUiComponent
+    BaseUiComponent,
+    CertificadosComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css' 
