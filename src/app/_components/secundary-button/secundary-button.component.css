@@ -1,0 +1,21 @@
+.custom-botton{
+    height: 40px;
+    padding: 10px, 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: #1A2856;
+    cursor: pointer;
+    border: none;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-botton:hover{
+    opacity: 90%;
+}
+
+.custom-botton i{
+    font-size: 20px;
+}
