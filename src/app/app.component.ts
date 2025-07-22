@@ -6,6 +6,7 @@ import { ItemCertificadoComponent } from "./_components/item-certificado/item-ce
 import { BaseUiComponent } from "./_components/base-ui/base-ui.component";
 import { CertificadosComponent } from "./pages/certificados/certificados.component";
 import { CertificadoFormComponent } from "./pages/certificado-form/certificado-form.component";
+import { CertificadoComponent } from "./pages/certificado/certificado.component";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ import { CertificadoFormComponent } from "./pages/certificado-form/certificado-f
     ItemCertificadoComponent,
     BaseUiComponent,
     CertificadosComponent,
-    CertificadoFormComponent
+    CertificadoFormComponent,
+    CertificadoComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css' 
