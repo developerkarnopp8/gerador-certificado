@@ -7,18 +7,14 @@ import { BaseUiComponent } from "./_components/base-ui/base-ui.component";
 import { CertificadosComponent } from "./pages/certificados/certificados.component";
 import { CertificadoFormComponent } from "./pages/certificado-form/certificado-form.component";
 import { CertificadoComponent } from "./pages/certificado/certificado.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [
     NavbarComponent,
-    PrimeryButtonComponent,
-    SecundaryButtonComponent,
-    ItemCertificadoComponent,
     BaseUiComponent,
-    CertificadosComponent,
-    CertificadoFormComponent,
-    CertificadoComponent
+    RouterOutlet
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css' 
