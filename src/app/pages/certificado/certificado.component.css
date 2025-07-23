@@ -81,6 +81,7 @@
     line-height: 80px;
     letter-spacing: 0;
     text-align: center;
+    color: #3B5AC2;
 }
 
 .lista-atividade-group{
@@ -114,4 +115,12 @@
     line-height: 160%;
     letter-spacing: 0;
     text-align: center;
+}
+
+.img-assinatura{
+    position: absolute;
+    right: 40px;
+    bottom: 24px;
+    width: 64px;
+    height: 64px;   
 }
