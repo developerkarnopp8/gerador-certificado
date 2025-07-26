@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SecundaryButtonComponent } from "../../_components/secundary-button/secundary-button.component";
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-certificado',
@@ -8,6 +8,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './certificado.component.html',
   styleUrl: './certificado.component.css'
 })
-export class CertificadoComponent {
+export class CertificadoComponent { 
 
+  
 }

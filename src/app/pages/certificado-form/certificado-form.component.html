@@ -10,7 +10,7 @@
 
         <div class="mb-3 custom-input-group">
             <label class="form-label" for="nome">Nome</label>
-            <input id="nome" type="text" class="form-control custom-input" placeholder="Ex: Gustavo Henrique">
+            <input [(ngModel)]="nome" id="nome" type="text" class="form-control custom-input" placeholder="Ex: Gustavo Henrique">
             <div class="error-message d-flex align-items-center">
                 <i class="ph ph-warning-circle"></i>
                 <p class="m-0">Error message</p>
@@ -19,40 +19,24 @@
         <div class="mb-3 d-flex align-items-end">
             <div class="flex-grow-1 me-2 custom-input-group">
                 <label class="form-label" for="atividade">Atividade</label>
-                <input id="atividade" type="text" class="form-control custom-input" placeholder="Ex: Curso de Angular">
+                <input [(ngModel)]="atividade" id="atividade" type="text" class="form-control custom-input" placeholder="Ex: Curso de Angular">
             </div>
             <app-secundary-button></app-secundary-button>
         </div>
         <div class="atividade-group custom-input-group">
             <label class="form-label" for="">Lista de atividades</label>
             <div class="item-list w-100">
+                @for(item of atividades; track $index) {
                 <div class="item">
-                    <span class="item-text">Configuração com Angular CLI</span>
+                    <span class="item-text">{{item}}</span>
                     <div class="remove-btn">
                         <i class="ph-bold ph-x"></i>
                     </div>
                 </div>
-                <hr>
-                <div class="item">
-                    <span class="item-text">Configuração com Angular CLI</span>
-                    <div class="remove-btn">
-                        <i class="ph-bold ph-x"></i>
-                    </div>
-                </div>
-                <hr>
-                <div class="item">
-                    <span class="item-text">Configuração com Angular CLI</span>
-                    <div class="remove-btn">
-                        <i class="ph-bold ph-x"></i>
-                    </div>
-                </div>
-                <hr>
-                <div class="item">
-                    <span class="item-text">Configuração com Angular CLI</span>
-                    <div class="remove-btn">
-                        <i class="ph-bold ph-x"></i>
-                    </div>
-                </div>
+                @if($index + 1 < atividades.length) {
+                    <hr>
+                }
+                }   
             </div>
         </div>
         <app-primery-button class="w-100">Gerar certificado</app-primery-button>
