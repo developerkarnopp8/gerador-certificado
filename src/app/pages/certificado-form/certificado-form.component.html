@@ -27,7 +27,7 @@
                 (click)="adicionarAtividade()" 
                 [textoBotao]="'Adicionar'"
                 [phClass]="'ph ph-plus'"
-                [disabled]="atividade.length == 0"
+                [disabled]="!atividade || atividade.length == 0"
             ></app-secundary-button>
         </div>
         <div class="atividade-group custom-input-group">
