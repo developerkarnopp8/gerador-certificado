@@ -10,7 +10,7 @@
 
         <div class="mb-3 custom-input-group">
             <label [ngClass]="{'text-danger-label': campoValido(nomeRef)}" class="form-label" for="nome">Nome</label>
-            <input [(ngModel)]="nome" #nomeRef="ngModel" name="nome" maxlength="150" required id="nome" type="text" class="form-control custom-input" placeholder="Ex: Gustavo Henrique">
+            <input [(ngModel)]="certificado.nome" #nomeRef="ngModel" name="nome" maxlength="150" required id="nome" type="text" class="form-control custom-input" placeholder="Ex: Gustavo Henrique">
             @if (campoValido(nomeRef)) {
                 <div class="error-message d-flex align-items-center">
                     <i class="ph ph-warning-circle"></i>
@@ -33,19 +33,19 @@
         <div class="atividade-group custom-input-group">
             <label class="form-label" for="">Lista de atividades</label>
             <div class="item-list w-100">
-                @for(item of atividades; track $index) {
+                @for(item of certificado.atividades; track $index) {
                 <div class="item">
                     <span class="item-text">{{item}}</span>
                     <div (click)="removeAtividade($index)" class="remove-btn">
                         <i class="ph-bold ph-x"></i>
                     </div>
                 </div>
-                @if($index + 1 < atividades.length) {
+                @if($index + 1 < certificado.atividades.length) {
                     <hr>
                 }
                 }   
             </div>
         </div>
-        <app-primery-button [disabled]="!formValido()" [textoBotao]="'Gerar Certificado'" class="w-100">Gerar certificado</app-primery-button>
+        <app-primery-button (click)="submit()" [disabled]="!formValido()" [textoBotao]="'Gerar Certificado'" class="w-100">Gerar certificado</app-primery-button>
     </div>
 </form>
