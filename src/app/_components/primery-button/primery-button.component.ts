@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-primery-button',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './primery-button.component.html',
   styleUrl: './primery-button.component.css'
 })
 export class PrimeryButtonComponent {
-
+  @Input() textoBotao: string = '';
+  @Input() disabled: boolean = false;
 }

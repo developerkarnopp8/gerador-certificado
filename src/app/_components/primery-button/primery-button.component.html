@@ -1,1 +1,3 @@
-<button class="custom-botton">Botão Primário</button>
+<button class="custom-botton" [ngStyle]="disabled ? {'opacity' : '50%'} : {}">
+    {{textoBotao}}
+</button>

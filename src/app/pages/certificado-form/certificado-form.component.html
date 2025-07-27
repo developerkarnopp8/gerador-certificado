@@ -20,16 +20,14 @@
         </div>
         <div class="mb-3 d-flex align-items-end">
             <div class="flex-grow-1 me-2 custom-input-group">
-                <label [ngClass]="{'text-danger-label': campoValido(atividadeRef)}" class="form-label" for="atividade">Atividade</label>
+                <label class="form-label" for="atividade">Atividade</label>
                 <input #atividadeRef="ngModel" maxlength="50" name="atividade" required [(ngModel)]="atividade" id="atividade" type="text" class="form-control custom-input" placeholder="Ex: Curso de Angular">
-                @if (campoValido(atividadeRef)) {
-                    <div class="error-message d-flex align-items-center">
-                        <i class="ph ph-warning-circle"></i>
-                        <p class="m-0">Nome do aluno é obrigatório!</p>
-                    </div>
-                }
             </div>
-            <app-secundary-button [ngStyle]="campoValido(atividadeRef) ? {'margin-bottom' : '24px'} : {}"></app-secundary-button>
+            <app-secundary-button 
+                [textoBotao]="'Adicionar'"
+                [phClass]="'ph ph-plus'"
+                [disabled]="atividade.length == 0"
+            ></app-secundary-button>
         </div>
         <div class="atividade-group custom-input-group">
             <label class="form-label" for="">Lista de atividades</label>
@@ -47,6 +45,6 @@
                 }   
             </div>
         </div>
-        <app-primery-button class="w-100">Gerar certificado</app-primery-button>
+        <app-primery-button [disabled]="!formValido()" [textoBotao]="'Gerar Certificado'" class="w-100">Gerar certificado</app-primery-button>
     </div>
 </form>

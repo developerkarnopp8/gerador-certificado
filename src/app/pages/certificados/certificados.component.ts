@@ -4,10 +4,15 @@ import { ItemCertificadoComponent } from "../../_components/item-certificado/ite
 import { CertificadoService } from '../../_services/certificado.service';
 
 import { OnInit } from '@angular/core'
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-certificados',
-  imports: [ItemCertificadoComponent],
+  imports: [
+    ItemCertificadoComponent, 
+    SecundaryButtonComponent, 
+    RouterLink
+  ],
   templateUrl: './certificados.component.html',
   styleUrl: './certificados.component.css'
 })
