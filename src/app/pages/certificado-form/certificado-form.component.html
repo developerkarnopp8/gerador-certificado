@@ -24,6 +24,7 @@
                 <input #atividadeRef="ngModel" maxlength="50" name="atividade" required [(ngModel)]="atividade" id="atividade" type="text" class="form-control custom-input" placeholder="Ex: Curso de Angular">
             </div>
             <app-secundary-button 
+                (click)="adicionarAtividade()" 
                 [textoBotao]="'Adicionar'"
                 [phClass]="'ph ph-plus'"
                 [disabled]="atividade.length == 0"
@@ -35,7 +36,7 @@
                 @for(item of atividades; track $index) {
                 <div class="item">
                     <span class="item-text">{{item}}</span>
-                    <div class="remove-btn">
+                    <div (click)="removeAtividade($index)" class="remove-btn">
                         <i class="ph-bold ph-x"></i>
                     </div>
                 </div>

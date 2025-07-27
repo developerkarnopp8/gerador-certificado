@@ -19,11 +19,7 @@ export class CertificadoFormComponent {
   nome: string = '';
   atividade: string = '';
   data: string = '';
-  atividades: string[] = [
-    'Angular',
-    'React',
-    'Vue',
-  ]
+  atividades: string[] = []
 
   campoValido(control: NgModel){
     return control.touched && control.invalid;
@@ -31,5 +27,19 @@ export class CertificadoFormComponent {
 
   formValido(){
     return this.atividades.length > 0 && this.nome.length > 0;
+  }
+
+  adicionarAtividade(){
+    if (this.atividade.trim() !== '') {
+      this.atividades.push(this.atividade.trim());
+      this.atividade = '';
+    }
+  }
+
+  removeAtividade(index: number) {
+    const itemIndex = index;
+    if (itemIndex > -1) {
+      this.atividades.splice(itemIndex, 1);
+    }
   }
 }
