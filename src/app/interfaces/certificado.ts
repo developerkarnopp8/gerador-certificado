@@ -1,5 +1,5 @@
 export interface Certificado {
     nome: string;
     atividades: string[];
-    // data: Date;
+    data: string;
 }
