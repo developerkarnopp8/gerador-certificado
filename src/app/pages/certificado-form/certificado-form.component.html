@@ -1,4 +1,4 @@
-<div class="d-flex flex-column align-items-center ">
+<form novalidate #form="ngForm" class="d-flex flex-column align-items-center ">
     <div class="content-titles">
         <h1 class="fw-bold custom-title">Geração de Certificado</h1>
         <p class="mb-4 custom-subtitle">Preencha os dados para gerar um novo certificado</p>
@@ -9,19 +9,27 @@
         <h2 class="card-title">Novo certificado</h2>
 
         <div class="mb-3 custom-input-group">
-            <label class="form-label" for="nome">Nome</label>
-            <input [(ngModel)]="nome" id="nome" type="text" class="form-control custom-input" placeholder="Ex: Gustavo Henrique">
-            <div class="error-message d-flex align-items-center">
-                <i class="ph ph-warning-circle"></i>
-                <p class="m-0">Error message</p>
-            </div>
+            <label [ngClass]="{'text-danger-label': campoValido(nomeRef)}" class="form-label" for="nome">Nome</label>
+            <input [(ngModel)]="nome" #nomeRef="ngModel" name="nome" maxlength="150" required id="nome" type="text" class="form-control custom-input" placeholder="Ex: Gustavo Henrique">
+            @if (campoValido(nomeRef)) {
+                <div class="error-message d-flex align-items-center">
+                    <i class="ph ph-warning-circle"></i>
+                    <p class="m-0">Nome do aluno é obrigatório!</p>
+                </div>
+            }
         </div>
         <div class="mb-3 d-flex align-items-end">
             <div class="flex-grow-1 me-2 custom-input-group">
-                <label class="form-label" for="atividade">Atividade</label>
-                <input [(ngModel)]="atividade" id="atividade" type="text" class="form-control custom-input" placeholder="Ex: Curso de Angular">
+                <label [ngClass]="{'text-danger-label': campoValido(atividadeRef)}" class="form-label" for="atividade">Atividade</label>
+                <input #atividadeRef="ngModel" maxlength="50" name="atividade" required [(ngModel)]="atividade" id="atividade" type="text" class="form-control custom-input" placeholder="Ex: Curso de Angular">
+                @if (campoValido(atividadeRef)) {
+                    <div class="error-message d-flex align-items-center">
+                        <i class="ph ph-warning-circle"></i>
+                        <p class="m-0">Nome do aluno é obrigatório!</p>
+                    </div>
+                }
             </div>
-            <app-secundary-button></app-secundary-button>
+            <app-secundary-button [ngStyle]="campoValido(atividadeRef) ? {'margin-bottom' : '24px'} : {}"></app-secundary-button>
         </div>
         <div class="atividade-group custom-input-group">
             <label class="form-label" for="">Lista de atividades</label>
@@ -41,4 +49,4 @@
         </div>
         <app-primery-button class="w-100">Gerar certificado</app-primery-button>
     </div>
-</div>
+</form>
