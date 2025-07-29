@@ -18,14 +18,14 @@ import { Certificado } from '../../interfaces/certificado';
   styleUrl: './certificados.component.css'
 })
 export class CertificadosComponent implements OnInit {
-  certificado: Certificado[] = [];
+  certificados: Certificado[] = [];
 
   constructor(
     private certificadoService: CertificadoService
   ) { }
 
   ngOnInit(): void {
-    this.certificado = this.certificadoService.certificado;
-    console.log(this.certificado);
+    this.certificados = this.certificadoService.certificado;
+    console.log(this.certificados);
   }
 }
