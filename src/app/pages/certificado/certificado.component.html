@@ -7,24 +7,26 @@
                 Voltar
             </p>
         </div>
-        <app-secundary-button></app-secundary-button>
+        <app-secundary-button [phClass]="'ph ph-download-simple'" [textoBotao]="'Download'"></app-secundary-button>
     </div>
-    <div class="certificado d-flex justify-content-center align-items-center">
-        <img src="certificate-ribbon.png" alt="Ícone de Medalha" class="icone-medalha">
-        <div class="conteudo-certificados">
-            <img class="img-assinatura" src="certificate-signature.svg" alt="Assinatura">
-            <div class="info-certificado d-flex flex-column align-items-center">
-                <div class="tittulo-subtitulo-certificado">
-                    <h1 class="titulo-certificado">CERTIFICADO DE CONCLUSÃO</h1>
-                    <p>Este certificado comprova que</p>
+    @if(certificado) {
+        <div class="certificado d-flex justify-content-center align-items-center">
+            <img src="certificate-ribbon.png" alt="Ícone de Medalha" class="icone-medalha">
+            <div class="conteudo-certificados">
+                <img class="img-assinatura" src="certificate-signature.svg" alt="Assinatura">
+                <div class="info-certificado d-flex flex-column align-items-center">
+                    <div class="tittulo-subtitulo-certificado">
+                        <h1 class="titulo-certificado">CERTIFICADO DE CONCLUSÃO</h1>
+                        <p>Este certificado comprova que</p>
+                    </div>
+                    <p class="nome-aluno" >{{certificado.nome}}</p>
+                    <div>
+                        <p class="lista-atividade-titulo">Concluiu com sucesso as seguintes atividades</p>
+                        <p class="lista-atividade">{{certificado.atividades.join(', ')}}</p>
+                    </div>
+                    <p class="data-emissao">Emitido em {{certificado.data}}</p>
                 </div>
-                <p class="nome-aluno" >Gustavo Karnopp</p>
-                <div>
-                    <p class="lista-atividade-titulo">Concluiu com sucesso as seguintes atividades</p>
-                    <p class="lista-atividade">Into dução ao Angular, configuração com Angular CLI, Criação de componentes reutilizáveis...</p>
-                </div>
-                <p class="data-emissao">Emitido em 25/04/2025</p>
             </div>
         </div>
-    </div>
+    }
 </div>
